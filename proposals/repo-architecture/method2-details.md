@@ -1,5 +1,7 @@
 # Method 2: Docker Compose Deployment
 
+<img width="1124" height="623" alt="image" src="https://github.com/user-attachments/assets/ebed4e7c-5e75-432f-9ad2-2f87e8fd9b36" />
+
 ## Overview
 
 This deployment method uses one root `docker-compose.yml` to orchestrate multiple services. Each service (frontend, backend) has its own Dockerfile so images can be built independently and then launched together by Compose. This is convenient for local development, simple CI pipelines, and small deployments.
