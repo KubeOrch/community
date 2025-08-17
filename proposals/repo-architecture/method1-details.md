@@ -80,6 +80,7 @@ COPY --from=backend-build /usr/local/bin/backend /usr/local/bin/backend
 COPY --from=frontend-build /app/frontend/.next /app/frontend/.next
 COPY --from=frontend-build /app/frontend/public /app/frontend/public
 COPY --from=frontend-build /app/frontend/package.json /app/frontend/package.json
+COPY --from=frontend-build /app/frontend/node_modules /app/frontend/node_modules
 
 # Install Node to run the Next start in production
 RUN apk add --no-cache nodejs npm
