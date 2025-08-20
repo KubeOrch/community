@@ -1,8 +1,12 @@
-# Method 1: Monolithic Dockerfile (Dockerfile.monolith)
+# Method 1: Production Monolithic Dockerfile (Dockerfile.monolith)
 
 ## Overview
 
-This method builds a single monolithic runtime image that contains both the Go backend and the Next.js frontend. A single multi-stage `Dockerfile.monolith` compiles/builds each service in its own stage and assembles a single, runnable final image. This is useful for small deployments, simplified distribution, or environments where a single process/image is easier to manage.
+This method builds a single monolithic runtime image that contains both the Go backend and the Next.js frontend. A single multi-stage `Dockerfile.monolith` compiles/builds each service in its own stage and assembles a single, runnable final image. This is our **production deployment approach** for end users, providing a simple single-image experience similar to Prometheus and Thanos.
+
+## Purpose
+
+**Production Deployment**: This approach is designed for end users who want a simple, single-image deployment experience. It provides the same user experience as popular tools like Prometheus and Thanos, where users can simply run one container and have the entire application available.
 
 ## Files involved
 
@@ -15,7 +19,7 @@ This method builds a single monolithic runtime image that contains both the Go b
 
 Inputs: repository containing `frontend/` and `backend/` source directories
 
-Outputs: a single image `kubeorchestra/monolith:latest` which exposes both backend (8080) and frontend (3000) ports
+Outputs: a single image `kubeorchestra/kubeorchestra:latest` which exposes both backend (8080) and frontend (3000) ports
 
 Error modes: build failures (missing deps), port conflicts when running container, missing runtime dependencies for frontend (if not copied or installed)
 
@@ -23,25 +27,23 @@ Success criteria: container runs, backend health endpoint responds OK, frontend 
 
 ## Basic usage commands
 
-
-
 Run the monolith (maps both ports 8080 and 3000):
 
 ```bash
-docker run -d --name ui-monolith -p 8080:8080 -p 3000:3000 kubeorchestra/monolith:latest
+docker run -d --name kubeorchestra -p 8080:8080 -p 3000:3000 kubeorchestra/kubeorchestra:latest
 ```
 
 Stop and remove:
 
 ```bash
-docker rm -f ui-monolith
+docker rm -f kubeorchestra
 ```
 
 ## Measured image size (local)
 
-- `kubeorchestra/monolith:latest` — 206MB (measured locally via `docker images` after build)
+- `kubeorchestra/kubeorchestra:latest` — 206MB (measured locally via `docker images` after build)
 
-How this was measured: `docker images --format 'table {{.Repository}}\t{{.Tag}}\t{{.Size}}' | grep kubeorchestra/monolith`
+How this was measured: `docker images --format 'table {{.Repository}}\t{{.Tag}}\t{{.Size}}' | grep kubeorchestra/kubeorchestra`
 
 ## Configuration (Dockerfile.monolith)
 
@@ -94,7 +96,6 @@ EXPOSE 8080 3000
 
 ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/docker-entrypoint.sh"]
 ```
-
 
 > Note: the final image installs `nodejs` and `npm` but the Dockerfile must ensure frontend runtime dependencies (Next, runtime node_modules or standalone output) are present in the final image — otherwise the frontend may return 500.
 
@@ -150,13 +151,45 @@ exit $EXIT_CODE
 
 ## Advantages
 
-- Single deployable artifact: simple to distribute or run when one image is preferred.
-- Easier to run in constrained environments where running a single container is simpler than multiple.
-- Avoids networking/compose complexity for small demos or POCs.
+- **Single deployable artifact**: Simple to distribute or run when one image is preferred
+- **User-friendly**: Similar experience to popular tools like Prometheus and Thanos
+- **Easier to run in constrained environments**: Where running a single container is simpler than multiple
+- **Avoids networking/compose complexity**: For basic deployments and demos
+- **Production-ready**: Optimized for end-user deployment scenarios
 
 ## Disadvantages / Trade-offs
 
-- Larger final image: bundling two services increases size and surface area (monolith image measured ~206MB).
-- Less flexible deployment: cannot scale frontend and backend independently.
-- Potential runtime dependency mistakes: must ensure frontend runtime deps are present in final image.
-- Not suited for production-scale workloads where separate images and orchestration (Kubernetes) are preferred.
+- **Larger final image**: Bundling two services increases size and surface area (monolith image measured ~206MB)
+- **Less flexible deployment**: Cannot scale frontend and backend independently
+- **Potential runtime dependency mistakes**: Must ensure frontend runtime deps are present in final image
+- **Not suited for development**: Developers need separate images for faster iteration cycles
+
+## Integration with CLI Tool
+
+This monolithic approach works seamlessly with the CLI tool for:
+
+- **Initialization**: Setting up the container with proper volumes and networking
+- **Database Configuration**: Managing external database connections
+- **Upgrade Operations**: Seamless version updates without data loss
+- **Service Management**: Start, stop, and status operations
+
+## Production Deployment Example
+
+```bash
+# Simple deployment with CLI
+kubeorchestra init
+
+# Manual deployment
+docker run -d --name kubeorchestra \
+  -p 8080:8080 -p 3000:3000 \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v ~/.kube:/root/.kube:ro \
+  -v kubeorchestra_data:/app/data \
+  kubeorchestra/kubeorchestra:latest
+
+# Database configuration
+kubeorchestra configure-db --type postgres --host localhost --port 5432
+
+# Upgrade to new version
+kubeorchestra upgrade --version v1.2.0
+```
