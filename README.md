@@ -1,17 +1,17 @@
-# KubeOrchestra Community
+# KubeOrch Community
 
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Cloud Native](https://img.shields.io/badge/Cloud%20Native-orange.svg)](https://landscape.cncf.io/)
 
-Welcome to the KubeOrchestra Community repo! Here you will find all things community, including our membership policy, project governance, charters for our Special Interest Groups and Working Groups, upcoming events, and more.
+Welcome to the KubeOrch Community repo! Here you will find all things community, including our membership policy, project governance, charters for our Special Interest Groups and Working Groups, upcoming events, and more.
 
-If you're looking for the main code base, you can find it at [kubeorchestra/core](https://github.com/kubeorchestra/core).
+If you're looking for the main code base, you can find it at [KubeOrch/core](https://github.com/KubeOrch/core).
 
-And check out [kubeorchestra/sig-release](https://github.com/kubeorchestra/sig-release) for all release-related information, such as our schedule, support matrix, or our roadmap.
+And check out [KubeOrch/sig-release](https://github.com/KubeOrch/sig-release) for all release-related information, such as our schedule, support matrix, or our roadmap.
 
 ## Get Started
 
-Check out the KubeOrchestra user guide for all of our documentation, including architecture, getting started, managing workflows and your KubeOrchestra cluster, release notes, and debugging.
+Check out the KubeOrch user guide for all of our documentation, including architecture, getting started, managing workflows and your KubeOrch cluster, release notes, and debugging.
 
 You can also find our [contributor guide](CONTRIBUTING.md) with resources for code and non-code contributions for beginners and those looking to contribute features and run a test cluster.
 
@@ -21,10 +21,10 @@ If you've had enough of code and want to speak to people, then you have plenty o
 
 - Join us in our weekly Community Meeting
 - Follow us on Twitter and our blog
-- Chat with us on Slack via #kubeorchestra and #kubeorchestra-dev
-- Discuss with us on the kubeorchestra-dev@lists.cncf.io mailing list
+- Chat with us on Slack via #KubeOrch and #KubeOrch-dev
+- Discuss with us on the KubeOrch-dev@lists.cncf.io mailing list
 - Stay informed about designs and upcoming events by watching our community content
-- Subscribe to our calendar or add it to your personal calendar using this calendar ID `kubeorchestra-community@cncf.io` to stay up to date about upcoming events
+- Subscribe to our calendar or add it to your personal calendar using this calendar ID `KubeOrch-community@cncf.io` to stay up to date about upcoming events
 - Consider adding your organisation to our Adopters list
 
 ## Community Resources
@@ -35,5 +35,5 @@ If you've had enough of code and want to speak to people, then you have plenty o
 - [Special Interest Groups](SIGS/) - SIG charters and meeting information
 - [Working Groups](WGS/) - Working group charters and activities
 - [Events](events/) - Community events, meetups, and conferences
-- [Adopters](ADOPTERS.md) - Organizations using KubeOrchestra in production
+- [Adopters](ADOPTERS.md) - Organizations using KubeOrch in production
 - [Contributors](CONTRIBUTORS.md) - Recognition of community contributors
