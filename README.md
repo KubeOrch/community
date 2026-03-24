@@ -3,17 +3,15 @@
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Cloud Native](https://img.shields.io/badge/Cloud%20Native-orange.svg)](https://landscape.cncf.io/)
 
-Welcome to the KubeOrch Community repo! Here you will find all things community, including our membership policy, project governance, charters for our Special Interest Groups and Working Groups, upcoming events, and more.
+Welcome to the KubeOrch Community repo! Here you will find all things community, including our membership policy, project governance, contributor ladder, roadmap, and more.
 
 If you're looking for the main code base, you can find it at [KubeOrch/core](https://github.com/KubeOrch/core).
-
-And check out [KubeOrch/sig-release](https://github.com/KubeOrch/sig-release) for all release-related information, such as our schedule, support matrix, or our roadmap.
 
 ## Get Started
 
 Check out the KubeOrch user guide for all of our documentation, including architecture, getting started, managing workflows and your KubeOrch cluster, release notes, and debugging.
 
-You can also find our [contributor guide](CONTRIBUTING.md) with resources for code and non-code contributions for beginners and those looking to contribute features and run a test cluster.
+You can also find our [contributor guide](https://github.com/KubeOrch/.github/blob/main/CONTRIBUTING.md) with resources for code and non-code contributions for beginners and those looking to contribute features and run a test cluster.
 
 ## Socializing
 
@@ -29,11 +27,17 @@ If you've had enough of code and want to speak to people, then you have plenty o
 
 ## Community Resources
 
-- [Governance](GOVERNANCE.md) - Project governance and decision-making processes
-- [Code of Conduct](CODE_OF_CONDUCT.md) - Community standards and guidelines
+### Governance & Policy
+- [Governance](https://github.com/KubeOrch/.github/blob/main/GOVERNANCE.md) - Project governance and decision-making processes
+- [Code of Conduct](https://github.com/KubeOrch/.github/blob/main/CODE_OF_CONDUCT.md) - Community standards and guidelines
+- [Contributing Guide](https://github.com/KubeOrch/.github/blob/main/CONTRIBUTING.md) - How to contribute to KubeOrch
+- [Security Policy](https://github.com/KubeOrch/.github/blob/main/SECURITY.md) - Vulnerability reporting and disclosure
+- [Contributor Ladder](CONTRIBUTOR_LADDER.md) - Roles and growth path for contributors
+- [API Stability Policy](API_STABILITY.md) - API versioning and deprecation policy
+
+### Project
 - [Maintainers](MAINTAINERS.md) - Current project maintainers
-- [Special Interest Groups](SIGS/) - SIG charters and meeting information
-- [Working Groups](WGS/) - Working group charters and activities
-- [Events](events/) - Community events, meetups, and conferences
-- [Adopters](ADOPTERS.md) - Organizations using KubeOrch in production
-- [Contributors](CONTRIBUTORS.md) - Recognition of community contributors
+- [Roadmap](ROADMAP.md) - Project direction and planned milestones
+- [Release Process](RELEASE_PROCESS.md) - Versioning, release cadence, and checklist
+- [Adopters](ADOPTERS.md) - Organizations using KubeOrch
+- [Proposals](proposals/) - Architecture decisions and RFCs
