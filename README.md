@@ -1,7 +1,7 @@
 # KubeOrch Community
 
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Cloud Native](https://img.shields.io/badge/Cloud%20Native-orange.svg)](https://landscape.cncf.io/)
+[![CNCF Aspiring](https://img.shields.io/badge/CNCF-Aspiring-blue.svg)](https://www.cncf.io/projects/)
 
 Welcome to the KubeOrch Community repo! Here you will find all things community, including our membership policy, project governance, contributor ladder, roadmap, and more.
 
@@ -20,9 +20,7 @@ If you've had enough of code and want to speak to people, then you have plenty o
 - Join us in our weekly Community Meeting
 - Follow us on Twitter and our blog
 - Chat with us on Slack via #KubeOrch and #KubeOrch-dev
-- Discuss with us on the KubeOrch-dev@lists.cncf.io mailing list
 - Stay informed about designs and upcoming events by watching our community content
-- Subscribe to our calendar or add it to your personal calendar using this calendar ID `KubeOrch-community@cncf.io` to stay up to date about upcoming events
 - Consider adding your organisation to our Adopters list
 
 ## Community Resources
