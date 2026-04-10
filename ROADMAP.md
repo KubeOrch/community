@@ -2,7 +2,38 @@
 
 This document outlines the project's direction and planned milestones. The roadmap is reviewed and updated quarterly by the maintainers.
 
-> **Last updated:** March 2026
+> **Last updated:** April 2026
+
+## vorchCD, GitOps & AI Assistant Track
+
+**Theme: Native CD + AI-powered workflows**
+
+This track introduces:
+- **vorchCD** — a native continuous delivery engine for KubeOrch
+- **GitOps integration** — Git as source of truth for visual workflows
+- **AI Assistant** — AI-driven design, optimization, and documentation
+
+### Q2 2026 – Foundations
+- [ ] Draft vorchCD + AI Assistant RFC in `community/proposals/` (scope, architecture, APIs, GitOps model)
+- [ ] Identify and stabilize core APIs needed by vorchCD (workflow definitions, deploy, status)
+- [ ] Add basic deployment status primitives in `core` (ID, status, timestamps)
+- [ ] Add Prometheus metrics for deployments (counts, failures, rollout durations)
+
+### Q3 2026 – vorchCD & GitOps
+- [ ] Implement first version of vorchCD service (reconciler loop, basic rolling updates, rollback)
+- [ ] Add GitOps export in `cli` (e.g. `orchcli export --git`) and CD status commands
+- [ ] Add Git connection + "Export to Git" / "View CD status" flows in `ui`
+- [ ] Introduce basic multi-cluster awareness (cluster registry + per-environment targeting)
+
+### Q4 2026 – AI Assistant (Design, Optimization, Docs)
+- [ ] AI Design Assistant in `ui` (prompt → draft architecture, "optimize this" workflows)
+- [ ] AI Optimization endpoint using deployment history + basic metrics (surfaced in UI + `cli`)
+- [ ] AI Docs / Design Copilot to generate architecture docs and PR-ready summaries
+
+### 2027+ – Stretch Goals
+- [ ] Deep GitOps integration with ArgoCD/Flux as peers to vorchCD
+- [ ] Progressive delivery (canary, traffic shifting with service mesh) and policy engine
+- [ ] AI cost estimation, failure forensics, and non-technical explainer modes
 
 ## Vision
 
