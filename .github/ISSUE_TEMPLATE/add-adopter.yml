@@ -1,0 +1,55 @@
+name: Add Adopter
+description: Request to be listed as a KubeOrch adopter
+title: "adopter: <name>"
+labels: ["adopter"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - Organization
+        - Individual
+    validations:
+      required: true
+
+  - type: input
+    id: name
+    attributes:
+      label: Organization / Name
+      placeholder: "Acme Corp"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: How do you use KubeOrch?
+      placeholder: "We use KubeOrch to orchestrate our microservices across 3 clusters."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - Production
+        - Staging
+        - Development
+    validations:
+      required: true
+
+  - type: input
+    id: since
+    attributes:
+      label: Using since
+      placeholder: "v0.3.0 or March 2026"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Website or profile (optional)
+      placeholder: "https://example.com"
