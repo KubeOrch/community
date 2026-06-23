@@ -164,8 +164,8 @@ Popular stacks available out of the box:
 
 - [ ] Homebrew tap for macOS/Linux
 - [ ] APT/YUM repository for Linux
-- [ ] Improve existing Scoop bucket (Windows)
-- [ ] npm global package (`npm install -g orchcli`)
+- [ ] Native install scripts for Windows (PowerShell + CMD)
+- [ ] npm global package (`npm install -g @kubeorch/cli`)
 - [ ] Docker image with CLI pre-installed
 
 ---
